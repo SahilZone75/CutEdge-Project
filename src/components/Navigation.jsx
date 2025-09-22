@@ -12,6 +12,14 @@ import MoreScreen from '../screens/MoreScreen';
 
 import LoginPage from '../components/LoginPage';
 import Splash from '../screens/Splash';
+import LatestUpdateScreen from './LatestUpdateScreen';
+import Register from './Register';
+import Coaches from '../screens/Coaches'
+import Referees from '../screens/Referees'
+import EmailVerificationScreen from '../screens/EmailVerificationScreen';
+import OtpScreen from '../screens/OtpScreen';
+import ResetPassword from '../screens/ResetPassword';
+import Dangal from '../screens/Dangal';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -52,7 +60,15 @@ function StackNavigation() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Login" component={LoginPage} />
+      <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="MainTabs" component={TabNavigation} />
+      <Stack.Screen name="LatestUpdate" component={LatestUpdateScreen} />
+      <Stack.Screen name="Coaches" component={Coaches}/> 
+      <Stack.Screen name="Referees" component={Referees}/> 
+      <Stack.Screen name="EmailVerificationScreen" component={EmailVerificationScreen}/> 
+      <Stack.Screen name="OtpScreen" component={OtpScreen}/> 
+      <Stack.Screen name="ResetPassword" component={ResetPassword}/>
+      <Stack.Screen name="Dangal" component={Dangal}/>
     </Stack.Navigator>
   );
 }

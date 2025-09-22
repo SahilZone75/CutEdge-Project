@@ -1,8 +1,11 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { useNavigation } from '@react-navigation/native';
 
 const Category = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.heading}>Category</Text>
@@ -25,6 +28,7 @@ const Category = () => {
               size={30}
               color="#fff"
               style={styles.icons}
+              onPress={()=> navigation.navigate("Coaches")}
             />
             <Text style={styles.label}>Coaches</Text>
           </View>
@@ -35,6 +39,7 @@ const Category = () => {
               size={30}
               color="#fff"
               style={styles.icons}
+              onPress={()=> navigation.navigate("Referees")}
             />
             <Text style={styles.label}>Referee</Text>
           </View>
@@ -47,6 +52,7 @@ const Category = () => {
               size={30}
               color="#fff"
               style={styles.icons}
+              onPress={()=> navigation.navigate("Dangal")}
             />
             <Text style={styles.label}>Dangal</Text>
           </View>

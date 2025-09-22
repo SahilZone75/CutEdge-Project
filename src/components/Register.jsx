@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -5,20 +6,35 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const LoginPage = ({ navigation }) => {
+const Register = ({ navigation }) => {
+  // ─── States ─────────────────────────────────────────────
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [remember, setRemember] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Welcome Back!</Text>
-      {/* Email */}
+      {/* ─── Title / Subtitle ───────────────────────────── */}
+      <Text style={styles.title}>Create an Account</Text>
+      <Text style={styles.para}>
+        Create an account to save your team, club & league preferences.
+      </Text>
+
+      {/* ─── Name ───────────────────────────────────────── */}
+      <Text style={styles.label}>Name</Text>
+      <TextInput
+        placeholder="type here"
+        placeholderTextColor="#aaa"
+        value={name}
+        onChangeText={setName}
+        style={styles.inputName}
+      />
+
+      {/* ─── Email ──────────────────────────────────────── */}
       <Text style={styles.label}>Email</Text>
       <View style={styles.inputWrapper}>
         <Icon
@@ -35,7 +51,8 @@ const LoginPage = ({ navigation }) => {
           style={styles.input}
         />
       </View>
-      {/* Password */}
+
+      {/* ─── Password ───────────────────────────────────── */}
       <Text style={styles.label}>Password</Text>
       <View style={styles.inputWrapper}>
         <TextInput
@@ -56,77 +73,72 @@ const LoginPage = ({ navigation }) => {
         </TouchableOpacity>
       </View>
 
-      {/* //* Remember Me */}
-      <TouchableOpacity
-        style={styles.rememberMe}
-        onPress={() => setRemember(!remember)}
-      >
-        <Text style={styles.checkbox}>{remember ? '✔' : '◯'}</Text>
-        <Text style={styles.rememberText}>Remember me</Text>
+      {/* ─── Sign In Button ─────────────────────────────── */}
+      <TouchableOpacity style={styles.signIn}>
+        <Text style={styles.signIntext}>Sign in</Text>
       </TouchableOpacity>
 
-      {/* //* Log In Button */}
-      <TouchableOpacity
-        style={styles.loginBtn}
-        onPress={() => navigation.navigate('MainTabs')} //Home
-      >
-        <Text style={styles.loginText}>Log In</Text>
-      </TouchableOpacity>
-
-      {/* //* Lines etc */}
+      {/* ─── Divider Line ───────────────────────────────── */}
       <View style={styles.containerLine}>
         <View style={styles.line} />
         <Text style={styles.textLine}>or</Text>
         <View style={styles.line} />
       </View>
 
-      <Text
-        style={{
-          color: '#ad4500ff',
-          textAlign: 'center',
-          marginBottom: 20,
-          fontWeight: 'bold',
-          fontSize: 16,
-        }}
-        onPress={() => navigation.navigate('EmailVerificationScreen')}
-      >
-        Forgot password?
-      </Text>
       {/* ─── Bottom Text ────────────────────────────────── */}
       <Text style={styles.bottomText}>
-        Don't have an account yet ?{' '}
+        Already have an account?{' '}
         <Text
           style={{ color: '#ffffffff', fontSize: 15 }}
-          onPress={() => navigation.navigate('Register')} // Sign up
+          onPress={() => navigation.navigate('Login')}
         >
-          Sign up
+          Log In
         </Text>
       </Text>
     </SafeAreaView>
   );
 };
 
-export default LoginPage;
+export default Register;
 
+// ─── Styles ─────────────────────────────────────────────
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     padding: 25,
+    paddingTop: 60,
     backgroundColor: '#252579',
   },
   title: {
-    fontSize: 34,
+    fontSize: 26,
     fontWeight: 'bold',
     color: '#fff',
-    marginBottom: 35,
+    marginBottom: 12,
     textAlign: 'center',
+  },
+  para: {
+    color: '#aea6a6ff',
+    fontSize: 15,
+    fontWeight: 600,
+    textAlign: 'center',
+    marginHorizontal: 40,
+    marginBottom: 35,
   },
   label: {
     fontSize: 20,
     fontWeight: '600',
     color: '#fff',
     marginBottom: 8,
+  },
+  inputName: {
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderWidth: 1,
+    borderColor: '#666',
+    height: 55,
+    borderRadius: 10,
+    paddingHorizontal: 20,
+    marginBottom: 20,
   },
   inputWrapper: {
     flexDirection: 'row',
@@ -149,28 +161,13 @@ const styles = StyleSheet.create({
   iconRight: {
     marginLeft: 8,
   },
-  rememberMe: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 25,
-    marginLeft: 10,
-  },
-  checkbox: {
-    color: 'limegreen',
-    fontSize: 18,
-  },
-  rememberText: {
-    color: '#fff',
-    marginLeft: 8,
-    fontSize: 15,
-  },
-  loginBtn: {
+  signIn: {
     backgroundColor: '#ff7f27',
     borderRadius: 12,
     paddingVertical: 18,
     alignItems: 'center',
   },
-  loginText: {
+  signIntext: {
     color: '#fff',
     fontSize: 20,
     fontWeight: 'bold',

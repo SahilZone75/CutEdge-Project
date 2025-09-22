@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 const newsData = [
   {
@@ -14,31 +15,32 @@ const newsData = [
     title: 'Sushil, Geeta, Sakshi: 5 Indians to Watch in Pro Wrestling League',
     date: 'Sep 13, 2022',
     time: '5 min',
-    image: { uri: 'https://i.ibb.co/mzFkgzP/news1.jpg' },
+    image: require('../assests/Images/Latest2.png'),
   },
   {
     id: 2,
     title: 'Stunning Performance by Team India in Wrestling Championship',
     date: 'Oct 2, 2022',
     time: '3 min',
-    image: { uri: 'https://i.ibb.co/2nZ0Ywv/news2.jpg' },
+    image: require('../assests/Images/Latest1.png'),
   },
   {
     id: 3,
     title: 'Young Talent Rising in Wrestling Academies',
     date: 'Nov 10, 2022',
     time: '4 min',
-    image: { uri: 'https://i.ibb.co/4Ws9H3C/news3.jpg' },
+    image: require('../assests/Images/Latest2.png'),
   },
 ];
 
 const NewsSection = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
         <Text style={styles.heading}>News</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('LatestUpdate')}>
           <Text style={styles.viewAll}>View All</Text>
         </TouchableOpacity>
       </View>
@@ -85,14 +87,16 @@ const styles = StyleSheet.create({
   },
   viewAll: {
     fontSize: 14,
-    color: 'orange',
+    color: '#f46200ff',
   },
   card: {
-    backgroundColor: '#222',
+    backgroundColor: '#252579',
     borderRadius: 5,
-    marginRight: 12,
+    marginRight: 5,
     width: 280,
     padding: 8,
+    borderColor:"#ffffff5b",
+    borderWidth:1
   },
   image: {
     width: '100%',
@@ -116,6 +120,9 @@ const styles = StyleSheet.create({
   },
   time: {
     fontSize: 12,
-    color: '#f90',
+    color: '#ff7f27',
   },
 });
+
+//* Agr koi screen component nhi h woh poora screen hh aur wo registered hh <Stack.Navigator></Stack.Navigator> ke inside tb wah destructure ho jyega, ({navigation}) like this and agr woh component hain to waha m useNavigation() hook ka use krna pdega navigation karane mm.
+//* navigation sirf Stack navigator ke andar render hone wale components me props se aata hai.
