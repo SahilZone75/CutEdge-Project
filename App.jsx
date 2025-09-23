@@ -11,6 +11,8 @@ import Coaches from './src/screens/Coaches';
 import Referees from './src/screens/Referees';
 import ResetPassword from './src/screens/ResetPassword';
 import Dangal from './src/screens/Dangal';
+import GalleryScreen from './src/screens/GalleryScreen'
+import LiveVideoScreen from './src/screens/LiveVideoScreen';
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
       {/* <Referees/> */}
       {/* <ResetPassword/> */}
       {/* <Dangal/> */}
+      {/* <GalleryScreen/> */}
+      {/* <LiveVideoScreen/> */}
     </View>
   );
 };

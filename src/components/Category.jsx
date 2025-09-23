@@ -58,7 +58,7 @@ const Category = () => {
           </View>
 
           <View style={styles.item}>
-            <Icon name="image" size={30} color="#fff" style={styles.icons} />
+            <Icon name="image" size={30} color="#fff" style={styles.icons} onPress={()=> navigation.navigate("GalleryScreen")} />
             <Text style={styles.label}>Photos</Text>
           </View>
 

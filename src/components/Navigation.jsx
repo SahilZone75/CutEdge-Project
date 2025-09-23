@@ -20,6 +20,7 @@ import EmailVerificationScreen from '../screens/EmailVerificationScreen';
 import OtpScreen from '../screens/OtpScreen';
 import ResetPassword from '../screens/ResetPassword';
 import Dangal from '../screens/Dangal';
+import GalleryScreen from '../screens/GalleryScreen';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -69,6 +70,7 @@ function StackNavigation() {
       <Stack.Screen name="OtpScreen" component={OtpScreen}/> 
       <Stack.Screen name="ResetPassword" component={ResetPassword}/>
       <Stack.Screen name="Dangal" component={Dangal}/>
+      <Stack.Screen name="GalleryScreen" component={GalleryScreen}/>
     </Stack.Navigator>
   );
 }
