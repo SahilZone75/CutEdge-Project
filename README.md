@@ -55,7 +55,7 @@ Users can navigate through profiles, schedules, and highlights without an intern
 
 - **Framework**: React Native  
 - **Navigation**: React Navigation  
-- **State Management**: React Context API (if applicable)  
+- **State Management**: React Context API
 - **Styling**: StyleSheet & third-party UI libraries for modern components  
 - **Platform Support**: Android and iOS  
 - **Offline Logic**: All data and app logic are handled locally, no backend required
