@@ -23,6 +23,31 @@
 
 ---
 
+## 📝 Project Structure
+
+/assets → Images, icons, and static resources
+
+/components → Reusable React Native components
+
+/screens → Individual app screens like Home, Profile, Schedule
+
+/navigation → React Navigation setup for stack and tab navigation
+
+/styles → Common stylesheets
+
+This modular structure ensures maintainability, scalability, and easy addition of new features in the future.
+
+⚙️ How It Works
+
+The app uses React Native components and styling for all screens.
+
+Navigation is handled using React Navigation for stack and tab-based flows.
+
+Data like wrestler info and events is stored locally in JSON or JS objects.
+
+Users can navigate through profiles, schedules, and highlights without an internet connection.
+---
+
 ## 🛠️ Tech Stack
 
 - **Framework**: React Native  
