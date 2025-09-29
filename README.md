@@ -43,5 +43,27 @@ Follow these steps to set up the project locally:
 ```bash
 git clone https://github.com/SahilZone75/CutEdge-Project.git
 
+```
+2. Navigate to the project directory:
+   
+```bash
+cd CutEdge-Project
+
+```
+3. Install the project dependencies:
+
+```bash
+npm install
+
+```
+4. Run the app:
+   Android:
+    ```bash
+        npx react-native run-android
+    ```
+  iOS (macOS required):
+    ```
+      npx react-native run-ios
+      ```
 
 
