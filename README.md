@@ -57,13 +57,9 @@ npm install
 
 ```
 4. Run the app:
-   Android:
-    ```bash
-        npx react-native run-android
-    ```
-  iOS (macOS required):
-    ```
-      npx react-native run-ios
-      ```
+       For Android:
+           npx react-native run-android
+       iOS (macOS required):
+           npx react-native run-ios
 
 
