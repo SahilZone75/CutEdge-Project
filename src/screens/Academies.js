@@ -10,7 +10,6 @@ import {
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-// React Native ka built-in Picker (iOS/Android):
 import { Picker } from '@react-native-picker/picker';
 
 const Academies = ({ navigation }) => {

@@ -13,22 +13,29 @@ const Category = () => {
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.lineOne}>
           <View style={styles.item}>
-            <Icon name="circle" size={30} color="#fff" style={styles.icons} />
+            <Icon name="circle" size={30} color="#fff" style={styles.icons} 
+              onPress={() => navigation.navigate('Olympic')}
+            />
             <Text style={styles.label}>Olympic</Text>
           </View>
 
           <View style={styles.item}>
-            <Icon name="users" size={30} color="#fff" style={styles.icons} />
+            <Icon
+              name="users"
+              size={30}
+              color="#fff"
+              style={styles.icons}
+              onPress={() => navigation.navigate('Wrestlers')}
+            />
             <Text style={styles.label}>Wrestler</Text>
           </View>
-
           <View style={styles.item}>
             <Icon
               name="user-circle"
               size={30}
               color="#fff"
               style={styles.icons}
-              onPress={()=> navigation.navigate("Coaches")}
+              onPress={() => navigation.navigate('Coaches')}
             />
             <Text style={styles.label}>Coaches</Text>
           </View>
@@ -39,7 +46,7 @@ const Category = () => {
               size={30}
               color="#fff"
               style={styles.icons}
-              onPress={()=> navigation.navigate("Referees")}
+              onPress={() => navigation.navigate('Referees')}
             />
             <Text style={styles.label}>Referee</Text>
           </View>
@@ -52,13 +59,19 @@ const Category = () => {
               size={30}
               color="#fff"
               style={styles.icons}
-              onPress={()=> navigation.navigate("Dangal")}
+              onPress={() => navigation.navigate('Dangal')}
             />
             <Text style={styles.label}>Dangal</Text>
           </View>
 
           <View style={styles.item}>
-            <Icon name="image" size={30} color="#fff" style={styles.icons} onPress={()=> navigation.navigate("GalleryScreen")} />
+            <Icon
+              name="image"
+              size={30}
+              color="#fff"
+              style={styles.icons}
+              onPress={() => navigation.navigate('GalleryScreen')}
+            />
             <Text style={styles.label}>Photos</Text>
           </View>
 
@@ -68,7 +81,7 @@ const Category = () => {
               size={30}
               color="#fff"
               style={styles.icons}
-              onPress={()=> navigation.navigate("Academies")}
+              onPress={() => navigation.navigate('Academies')}
             />
             <Text style={styles.label}>Academies</Text>
           </View>
@@ -79,6 +92,7 @@ const Category = () => {
               size={30}
               color="#fff"
               style={styles.icons}
+              onPress={() => navigation.navigate('LatestUpdate')}
             />
             <Text style={styles.label}>News</Text>
           </View>
@@ -113,8 +127,8 @@ const styles = StyleSheet.create({
   },
   item: {
     alignItems: 'center',
-    paddingTop:12,
-    paddingHorizontal:24,
+    paddingTop: 12,
+    paddingHorizontal: 24,
   },
   label: {
     marginTop: 8,

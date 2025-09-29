@@ -79,7 +79,7 @@ const LatestUpdateScreen = () => {
         </View>
       </View>
 
-      <Text style={styles.header}>Latest Update</Text>
+      <Text style={styles.header}>News</Text>
 
       {/* Filters */}
       <View style={styles.filterRow}>

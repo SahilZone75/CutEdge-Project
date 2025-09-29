@@ -7,24 +7,74 @@ const Splash = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Login'); // Make sure this name matches your stack screen
-    }, 6000);
+      navigation.replace('Login');
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [navigation]);
 
   return (
     <ImageBackground
-      source={require('../assests/Images/spl.png')} // check folder spelling
+      source={require('../assests/Images/spl.png')}
       style={styles.background}
       resizeMode="cover"
     >
       <View style={styles.haloWrapper}>
-        <View style={[styles.haloCircle, { width: 900, height: 900, borderRadius: 450, borderColor: 'rgba(255, 255, 255, 0.07)' }]} />
-        <View style={[styles.haloCircle, { width: 750, height: 750, borderRadius: 400, borderColor: 'rgba(255, 255, 255, 0.07)' }]} />
-        <View style={[styles.haloCircle, { width: 600, height: 600, borderRadius: 350, borderColor: 'rgba(255, 255, 255, 0.07)' }]} />
-        <View style={[styles.haloCircle, { width: 450, height: 450, borderRadius: 300, borderColor: 'rgba(255, 255, 255, 0.07)' }]} />
-        <View style={[styles.haloCircle, { width: 300, height: 300, borderRadius: 300, borderColor: 'rgba(255, 255, 255, 0.07)' }]} />
+        <View
+          style={[
+            styles.haloCircle,
+            {
+              width: 900,
+              height: 900,
+              borderRadius: 450,
+              borderColor: 'rgba(255, 255, 255, 0.07)',
+            },
+          ]}
+        />
+        <View
+          style={[
+            styles.haloCircle,
+            {
+              width: 750,
+              height: 750,
+              borderRadius: 400,
+              borderColor: 'rgba(255, 255, 255, 0.07)',
+            },
+          ]}
+        />
+        <View
+          style={[
+            styles.haloCircle,
+            {
+              width: 600,
+              height: 600,
+              borderRadius: 350,
+              borderColor: 'rgba(255, 255, 255, 0.07)',
+            },
+          ]}
+        />
+        <View
+          style={[
+            styles.haloCircle,
+            {
+              width: 450,
+              height: 450,
+              borderRadius: 300,
+              borderColor: 'rgba(255, 255, 255, 0.07)',
+            },
+          ]}
+        />
+        <View
+          style={[
+            styles.haloCircle,
+            {
+              width: 300,
+              height: 300,
+              borderRadius: 300,
+              borderColor: 'rgba(255, 255, 255, 0.07)',
+            },
+          ]}
+        />
 
         <Image
           source={require('../assests/Images/spl2.png')} // check folder spelling

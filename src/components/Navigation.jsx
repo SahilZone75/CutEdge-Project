@@ -28,6 +28,9 @@ import Video from '../screens/Video';
 import LiveVideoScreen from '../screens/LiveVideoScreen';
 import SidePanel from '../screens/SidePanel';
 import Academies from '../screens/Academies';
+import Wrestlers from '../screens/Wrestlers';
+import NewsSection from './NewsSection';
+import Olympic from '../screens/Olympic';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -60,14 +63,13 @@ function TabNavigation({ navigation }) {
       <Tab.Screen name="Live" component={LiveVideoScreen} />
       <Tab.Screen name="Video" component={Video} />
 
-      {/* Last tab sirf drawer open karne ke liye */}
       <Tab.Screen
         name="Menu"
-        component={MainTask} // dummy component hain, render nahi hoga
+        component={MainTask}
         listeners={{
           tabPress: e => {
-            e.preventDefault(); // screen change na ho
-            navigation.openDrawer(); // drawer open k liye
+            e.preventDefault();
+            navigation.openDrawer();
           },
         }}
       />
@@ -85,7 +87,7 @@ function DrawerNavigation() {
       }}
       drawerContent={props => <SidePanel {...props} />}
     >
-      <Drawer.Screen name="MainTabs" component={TabNavigation} />
+      <Drawer.Screen name="RootDrawers" component={TabNavigation} />
     </Drawer.Navigator>
   );
 }
@@ -97,10 +99,7 @@ function StackNavigation() {
       <Stack.Screen name="Login" component={LoginPage} />
       <Stack.Screen name="Register" component={Register} />
 
-      {/* Stack me ab DrawerNavigation render hoga */}
-      <Stack.Screen name="MainTabs" component={DrawerNavigation} />
-      {/* <Stack.Screen name="RootDrawer" component={DrawerNavigation} /> */}
-
+      <Stack.Screen name="RootDrawer" component={DrawerNavigation} />
 
       <Stack.Screen name="LatestUpdate" component={LatestUpdateScreen} />
       <Stack.Screen name="Coaches" component={Coaches} />
@@ -114,6 +113,8 @@ function StackNavigation() {
       <Stack.Screen name="Dangal" component={Dangal} />
       <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
       <Stack.Screen name="Academies" component={Academies} />
+      <Stack.Screen name="Wrestlers" component={Wrestlers} />
+      <Stack.Screen name="Olympic" component={Olympic} />
     </Stack.Navigator>
   );
 }
