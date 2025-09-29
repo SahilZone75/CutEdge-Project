@@ -13,6 +13,8 @@ import ResetPassword from './src/screens/ResetPassword';
 import Dangal from './src/screens/Dangal';
 import GalleryScreen from './src/screens/GalleryScreen'
 import LiveVideoScreen from './src/screens/LiveVideoScreen';
+import Video from './src/screens/Video';
+import Academies from './src/screens/Academies';
 
 const App = () => {
   return (
@@ -28,6 +30,8 @@ const App = () => {
       {/* <Dangal/> */}
       {/* <GalleryScreen/> */}
       {/* <LiveVideoScreen/> */}
+      {/* <Video/> */}
+      {/* <Academies/> */}
     </View>
   );
 };

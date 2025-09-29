@@ -68,6 +68,7 @@ const Category = () => {
               size={30}
               color="#fff"
               style={styles.icons}
+              onPress={()=> navigation.navigate("Academies")}
             />
             <Text style={styles.label}>Academies</Text>
           </View>

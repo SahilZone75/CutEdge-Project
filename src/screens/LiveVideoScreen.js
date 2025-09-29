@@ -1,31 +1,37 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const videoList = [
   {
-    id: "1",
-    image: require('../assests/Images/LiveVideo1.png'),
+    id: '1',
+    image: require('../assests/Images/LiveVideo3.png'),
     highlighted: true,
   },
   {
-    id: "2",
+    id: '2',
     image: require('../assests/Images/LiveVideo2.png'),
     highlighted: false,
   },
   {
-    id: "3",
-    image: require('../assests/Images/LiveVideo3.png'),
+    id: '3',
+    image: require('../assests/Images/Gallery3.png'),
     highlighted: false,
   },
 ];
 
-const LiveVideoScreen = ({navigation}) => {
+const LiveVideoScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      
-      {/* Header Icons */}
+      {/* Header */}
       <View style={styles.containerHeader}>
         <Icon
           name="arrow-left"
@@ -45,7 +51,6 @@ const LiveVideoScreen = ({navigation}) => {
         </View>
       </View>
 
-      {/* Screen Header */}
       <Text style={styles.header}>Live Videos</Text>
 
       {/* Scrollable Cards */}
@@ -53,23 +58,22 @@ const LiveVideoScreen = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 20 }}
       >
-        {videoList.map((video) => (
+        {videoList.map(video => (
           <View
             style={[styles.card, video.highlighted && styles.cardHighlighted]}
             key={video.id}
           >
-            <Image
-              source={video.image}
-              style={styles.innerImage}
-            />
+            <Image source={video.image} style={styles.innerImage} />
 
-            {/* Badges */}
-            <View style={styles.liveBadge}>
-              <Text style={styles.liveBadgeText}>LIVE</Text>
-            </View>
-            <View style={styles.viewerBadge}>
-              <Icon name="eye" size={14} color="#fff" />
-              <Text style={styles.viewerBadgeText}>456</Text>
+            {/* Badges in one row */}
+            <View style={styles.badgeRow}>
+              <View style={styles.liveBadge}>
+                <Text style={styles.liveBadgeText}>LIVE</Text>
+              </View>
+              <View style={styles.viewerBadge}>
+                <Icon name="eye" size={14} color="#fff" />
+                <Text style={styles.viewerBadgeText}>456</Text>
+              </View>
             </View>
           </View>
         ))}
@@ -109,45 +113,40 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginHorizontal: 15,
   },
-
-  /** Outer Card */
   card: {
     backgroundColor: '#1d2375',
     borderRadius: 5,
     marginVertical: 10,
     padding: 10,
     elevation: 5,
-    shadowColor: "#000",
+    shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.15,
     shadowRadius: 7,
     borderWidth: 2,
-    borderColor: 'transparent',
-    // overflow: 'hidden',
+    borderColor: '#ffffff28',
   },
-  cardHighlighted: {
-    borderColor: '#4376fe',
-    borderWidth: 2,
-  },
-
-  /** Inner Image */
   innerImage: {
     width: '100%',
-    height: 200, // adjust height as needed
+    height: 200,
     borderRadius: 3,
-    resizeMode: 'cover',
+    resizeMode: 'contain',
+    backgroundColor: '#000',
   },
-
-  /** Badges */
-  liveBadge: {
+  badgeRow: {
     position: 'absolute',
     top: 15,
     left: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    zIndex: 2,
+  },
+  liveBadge: {
     backgroundColor: '#f24a4a',
     borderRadius: 6,
     paddingVertical: 2,
     paddingHorizontal: 9,
-    zIndex: 2,
   },
   liveBadgeText: {
     color: 'white',
@@ -156,9 +155,6 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   viewerBadge: {
-    position: 'absolute',
-    top: 15,
-    right: 20,
     backgroundColor: '#313866',
     borderRadius: 10,
     paddingHorizontal: 7,
@@ -166,7 +162,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 3,
-    zIndex: 2,
   },
   viewerBadgeText: {
     color: 'white',
