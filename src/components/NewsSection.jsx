@@ -96,7 +96,8 @@ const styles = StyleSheet.create({
     width: 280,
     padding: 8,
     borderColor:"#ffffff5b",
-    borderWidth:1
+    borderWidth:1,
+    marginBottom:20,
   },
   image: {
     width: '100%',
