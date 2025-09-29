@@ -62,4 +62,10 @@ npm install
        iOS (macOS required):
            npx react-native run-ios
 
+```bash
+npx react-native run-android
+```
+```bash
+npx react-native run-ios
+```
 
